@@ -18,8 +18,6 @@ This project uses [uv](https://github.com/astral-sh/uv) for Python dependency ma
 
 3. **Run your scripts:**
 	```sh
-	uv run python3 hello.py
-	# or run any script in multi-agent-example/
-	uv run python3 multi-agent-example/computer_science_assistant.py
+	uv run python3 multi-agent-example/teachers_assistant.py
 	```
 
