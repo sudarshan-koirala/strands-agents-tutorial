@@ -61,6 +61,26 @@ def general_assistant(query: str) -> str:
             return text_response
         
         return "Sorry, I couldn't provide an answer to your question."
+
     except Exception as e:
         # Return error message
         return f"Error processing your question: {str(e)}"
+
+
+# Allow running this file standalone for testing
+if __name__ == "__main__":
+    print("\n💡 General Assistant Test 💡\n")
+    print("Type a general knowledge question, or 'exit' to quit.")
+    while True:
+        try:
+            user_input = input("\n> ")
+            if user_input.lower() == "exit":
+                print("\nGoodbye! 👋")
+                break
+            response = general_assistant(user_input)
+            print(response)
+        except KeyboardInterrupt:
+            print("\n\nExecution interrupted. Exiting...")
+            break
+        except Exception as e:
+            print(f"\nAn error occurred: {str(e)}")

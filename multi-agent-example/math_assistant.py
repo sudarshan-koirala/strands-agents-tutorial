@@ -60,6 +60,26 @@ def math_assistant(query: str) -> str:
             return text_response
 
         return "I apologize, but I couldn't solve this mathematical problem. Please check if your query is clearly stated or try rephrasing it."
+
     except Exception as e:
         # Return specific error message for math processing
         return f"Error processing your mathematical query: {str(e)}"
+
+
+# Allow running this file standalone for testing
+if __name__ == "__main__":
+    print("\n🧮 Math Assistant Test 🧮\n")
+    print("Type a math question, or 'exit' to quit.")
+    while True:
+        try:
+            user_input = input("\n> ")
+            if user_input.lower() == "exit":
+                print("\nGoodbye! 👋")
+                break
+            response = math_assistant(user_input)
+            print(response)
+        except KeyboardInterrupt:
+            print("\n\nExecution interrupted. Exiting...")
+            break
+        except Exception as e:
+            print(f"\nAn error occurred: {str(e)}")

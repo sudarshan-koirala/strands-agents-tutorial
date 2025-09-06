@@ -60,6 +60,26 @@ def english_assistant(query: str) -> str:
             return text_response
         
         return "I apologize, but I couldn't properly analyze your English language question. Could you please rephrase or provide more context?"
+
     except Exception as e:
         # Return specific error message for English queries
         return f"Error processing your English language query: {str(e)}"
+
+
+# Allow running this file standalone for testing
+if __name__ == "__main__":
+    print("\n📚 English Assistant Test 📚\n")
+    print("Type an English language or literature question, or 'exit' to quit.")
+    while True:
+        try:
+            user_input = input("\n> ")
+            if user_input.lower() == "exit":
+                print("\nGoodbye! 👋")
+                break
+            response = english_assistant(user_input)
+            print(response)
+        except KeyboardInterrupt:
+            print("\n\nExecution interrupted. Exiting...")
+            break
+        except Exception as e:
+            print(f"\nAn error occurred: {str(e)}")

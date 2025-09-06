@@ -60,6 +60,26 @@ def language_assistant(query: str) -> str:
             return text_response
 
         return "I apologize, but I couldn't process your language request. Please ensure you've specified the languages involved and the specific translation or learning need."
+
     except Exception as e:
         # Return specific error message for language processing
         return f"Error processing your language query: {str(e)}"
+
+
+# Allow running this file standalone for testing
+if __name__ == "__main__":
+    print("\n🌐 Language Assistant Test 🌐\n")
+    print("Type a translation or language learning question, or 'exit' to quit.")
+    while True:
+        try:
+            user_input = input("\n> ")
+            if user_input.lower() == "exit":
+                print("\nGoodbye! 👋")
+                break
+            response = language_assistant(user_input)
+            print(response)
+        except KeyboardInterrupt:
+            print("\n\nExecution interrupted. Exiting...")
+            break
+        except Exception as e:
+            print(f"\nAn error occurred: {str(e)}")

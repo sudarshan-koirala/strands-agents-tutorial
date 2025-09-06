@@ -65,6 +65,26 @@ def computer_science_assistant(query: str) -> str:
             return text_response
         
         return "I apologize, but I couldn't process your computer science question. Please try rephrasing or providing more specific details about what you're trying to learn or accomplish."
+
     except Exception as e:
         # Return specific error message for computer science processing
         return f"Error processing your computer science query: {str(e)}"
+
+
+# Allow running this file standalone for testing
+if __name__ == "__main__":
+    print("\n🖥️ Computer Science Assistant Test 🖥️\n")
+    print("Type a computer science question, or 'exit' to quit.")
+    while True:
+        try:
+            user_input = input("\n> ")
+            if user_input.lower() == "exit":
+                print("\nGoodbye! 👋")
+                break
+            response = computer_science_assistant(user_input)
+            print(response)
+        except KeyboardInterrupt:
+            print("\n\nExecution interrupted. Exiting...")
+            break
+        except Exception as e:
+            print(f"\nAn error occurred: {str(e)}")
