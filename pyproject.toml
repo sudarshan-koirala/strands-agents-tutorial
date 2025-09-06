@@ -1,0 +1,12 @@
+[project]
+name = "strands-agents-tutorial"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ipykernel>=6.30.1",
+    "mcp[cli]>=1.13.1",
+    "strands-agents-tools>=0.2.6",
+    "strands-agents[ollama]>=1.7.1",
+]
